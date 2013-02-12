@@ -1,0 +1,52 @@
+
+buildscript {
+  repositories {
+    mavenLocal()
+    mavenCentral()
+  }
+  dependencies {
+    classpath 'org.gradle.api.plugins:gradle-android-plugin:1.2.2-SNAPSHOT'
+//    classpath 'com.android.tools.build:gradle:0.2'
+  }
+}
+
+apply plugin: 'android'
+apply plugin: 'idea'
+
+repositories {
+  mavenCentral()
+}
+
+// Signing configuration, valid for all builds (1)
+androidSignAndAlign {
+  keyAlias = "balixo"
+  keyStore = "$project.projectDir/key.store"
+  keyStorePassword = "balixo"
+  keyAliasPassword = "balixo"
+}
+
+// Configure the filtering of resources with properties from the Gradle's project scope (2)
+processResources {
+  expand( project.properties )
+}
+
+// Configure a dedicated debug build (3)
+task configureDebug << {
+  jar.classifier = "debug"
+}
+
+dependencies {
+  compile project( ":http-server" )
+  compile "org.slf4j:slf4j-android:1.6.1-RC1"
+}
+
+// Configure a dedicated release build (4)
+task configureRelease << {
+  proguard.enabled = true
+}
+
+idea.module.iml {
+  whenMerged { module ->
+    module.dependencies*.exported = true
+  }
+}

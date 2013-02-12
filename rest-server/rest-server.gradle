@@ -1,0 +1,19 @@
+
+ext.restletVersion = '2.1.1'
+ext.jacksonVersion = '2.1.2'
+ext.stax2Version = '3.1.1'
+ext.woodstoxVersion = '4.1.2'
+
+dependencies {
+  compile project( ":rest-common" )
+  compile ("org.restlet.jse:org.restlet:$ext.restletVersion") { transitive = false }
+  compile ("org.restlet.jse:org.restlet.ext.jackson:$ext.restletVersion") { transitive = false }
+  compile ("org.codehaus.woodstox:stax2-api:$ext.stax2Version") { transitive = false }
+  compile ("org.codehaus.woodstox:woodstox-core-asl:$ext.woodstoxVersion") { transitive = false }
+  compile ("org.restlet.jse:org.restlet.ext.xml:$ext.restletVersion")  { transitive = false }
+  compile ("com.fasterxml.jackson.dataformat:jackson-dataformat-xml:$ext.jacksonVersion")  { transitive = false }
+  compile ("com.fasterxml.jackson.core:jackson-annotations:$ext.jacksonVersion")  { transitive = false }
+  compile ("com.fasterxml.jackson.core:jackson-core:$ext.jacksonVersion")  { transitive = false }
+  compile ("com.fasterxml.jackson.core:jackson-databind:$ext.jacksonVersion")  { transitive = false }
+  compile ("com.fasterxml.jackson.module:jackson-module-jaxb-annotations:$ext.jacksonVersion")  { transitive = false }
+}

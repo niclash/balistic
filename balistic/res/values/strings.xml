@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="app_name">Balistic</string>
+  <string name="logoDescriptor">Bali Automation logo</string>
+  <string name="balisticStarted">Balistic Started</string>
+  <string name="notificationStartedTitle">Balistic Notification</string>
+  <string name="notificationStartedText">Balistic is Running</string>
+</resources>

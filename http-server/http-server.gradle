@@ -1,0 +1,14 @@
+
+ext.jettyVersion = '8.1.9.v20130131'
+//ext.jettyVersion = '9.0.0.RC0'   This version doesn't have ProxyServlet and BalancerServlet
+ext.slf4jVersion = '1.7.2'
+
+dependencies {
+  compile ("org.eclipse.jetty:jetty-webapp:$ext.jettyVersion")
+  compile ("org.eclipse.jetty:jetty-continuation:$ext.jettyVersion")
+  compile ("org.eclipse.jetty:jetty-servlets:$ext.jettyVersion")
+  compile ("org.eclipse.jetty:jetty-client:$ext.jettyVersion")
+
+//  testCompile ("org.slf4j:slf4j-api:$ext.slf4jVersion")
+//  testCompile ("org.slf4j:slf4j-simple:$ext.slf4jVersion") { transitive = false }
+}

@@ -1,0 +1,7 @@
+
+ext.restletVersion = '2.1.1'
+ext.jacksonVersion = '2.1.1'
+
+dependencies {
+  compile ("org.restlet.jse:org.restlet:$ext.restletVersion") { transitive = false }
+}
